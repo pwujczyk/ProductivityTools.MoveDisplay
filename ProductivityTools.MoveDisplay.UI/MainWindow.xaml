@@ -6,6 +6,35 @@
         xmlns:local="clr-namespace:ProductivityTools.MoveDisplay.UI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="StopImage" UriSource="Resources\arrowsGreen.png"/>
+            <BitmapImage x:Key="PlayImage" UriSource="Resources\arrowsGrey.png"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="taskBarItemInfo1" 
+                     Overlay="{StaticResource ResourceKey=StopImage}"
+                     ThumbnailClipMargin="80,0,80,140"
+                     Description="Taskbar Item Info Sample">
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfoCollection>
+                    <ThumbButtonInfo
+                    DismissWhenClicked="False"
+                    Command="MediaCommands.Play"
+                    CommandTarget="{Binding ElementName=btnPlay}"
+                    Description="Play"
+                    ImageSource="{StaticResource ResourceKey=PlayImage}"/>
+                    <ThumbButtonInfo
+                    DismissWhenClicked="True"
+                    Command="MediaCommands.Stop"
+                    CommandTarget="{Binding ElementName=btnStop}"
+                    Description="Stop"
+                    ImageSource="{StaticResource ResourceKey=StopImage}"/>
+                </ThumbButtonInfoCollection>
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
     <Grid>
 
     </Grid>
