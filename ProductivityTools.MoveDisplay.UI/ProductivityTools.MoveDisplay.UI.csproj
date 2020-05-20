@@ -6,9 +6,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Resources\arrowsGreen.png" />
     <None Remove="Resources\arrowsGrey.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ProductivityTools.UnmanagedDisplayWrapper" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>

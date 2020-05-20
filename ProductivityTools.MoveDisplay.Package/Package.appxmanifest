@@ -7,13 +7,13 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="96b774e5-df63-459d-8d3d-30c4bdac0d13"
-    Publisher="CN=pwujczyk"
-    Version="1.0.0.0" />
+    Name="12983ProductivityTools.MoveDisplay"
+    Publisher="CN=B7077B4A-2360-4315-A97A-415E1DD60BD3"
+    Version="0.1.12.0" />
 
   <Properties>
-    <DisplayName>ProductivityTools.MoveDisplay.Package</DisplayName>
-    <PublisherDisplayName>pwujczyk</PublisherDisplayName>
+    <DisplayName>MoveDisplay</DisplayName>
+    <PublisherDisplayName>ProductivityTools</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
@@ -31,7 +31,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="ProductivityTools.MoveDisplay.Package"
+        DisplayName="MoveDisplay"
         Description="ProductivityTools.MoveDisplay.Package"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"

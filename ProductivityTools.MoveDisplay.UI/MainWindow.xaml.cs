@@ -24,5 +24,17 @@ namespace ProductivityTools.MoveDisplay.UI
         {
             InitializeComponent();
         }
+
+        private void MoveLeft_Click(object sender, RoutedEventArgs e)
+        {
+            ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
+            displays.MoveExternalDisplayToLeft();
+        }
+
+        private void MoveRight_Click(object sender, RoutedEventArgs e)
+        {
+            ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
+            displays.MoveExternalDisplayToRight();
+        }
     }
 }
