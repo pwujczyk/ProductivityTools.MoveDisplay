@@ -28,13 +28,28 @@ namespace ProductivityTools.MoveDisplay.UI
         private void MoveLeft_Click(object sender, RoutedEventArgs e)
         {
             ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
-            displays.MoveExternalDisplayToLeft();
+            if (displays.Count > 1)
+            {
+                displays.MoveExternalDisplayToLeft();
+            }
+            else
+            {
+                MessageBox.Show("No external display detected. Nothing to move.");
+            }
         }
 
         private void MoveRight_Click(object sender, RoutedEventArgs e)
         {
+
             ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
-            displays.MoveExternalDisplayToRight();
+            if (displays.Count > 1)
+            {
+                displays.MoveExternalDisplayToRight();
+            }
+            else
+            {
+                MessageBox.Show("No external display detected. Nothing to move.");
+            }
         }
     }
 }
