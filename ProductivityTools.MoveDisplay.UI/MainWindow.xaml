@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductivityTools.MoveDisplay.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="66" Width="231">
+        Title="MainWindow" Height="300" Width="376">
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="StopImage" UriSource="Resources\arrowsGreen.png"/>
@@ -30,7 +30,7 @@
                      Overlay="{StaticResource ResourceKey=PlayImage}"
                      ThumbnailClipMargin="80,0,80,140"
                      Description="Taskbar Item Info Sample">-->
-        <Window.TaskbarItemInfo>
+    <Window.TaskbarItemInfo>
         <TaskbarItemInfo x:Name="taskBarItemInfo1">
             <TaskbarItemInfo.ThumbButtonInfos>
                 <ThumbButtonInfoCollection>
@@ -46,14 +46,22 @@
             </TaskbarItemInfo.ThumbButtonInfos>
         </TaskbarItemInfo>
     </Window.TaskbarItemInfo>
-    <Grid Margin="0,0,0,4">
+    <Grid Margin="0,0,0,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition />
+            <ColumnDefinition  />
         </Grid.ColumnDefinitions>
-        <Button x:Name="MoveLeft" Content="Move display to left" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20" Width="109" Click="MoveLeft_Click"/>
-        <Button x:Name="MoveRight" Content="Move display to right" HorizontalAlignment="Left" Margin="110,0,0,0" VerticalAlignment="Center" Height="20" Width="117" Click="MoveRight_Click"/>
+        <Button Grid.Row="0" Grid.Column="0" x:Name="MoveLeft" Content="Move display to left" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="MoveLeft_Click" Margin="0,0,0,0"/>
+        <Button Grid.Row="0" Grid.Column="1" x:Name="MoveRight" Content="Move display to right" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top" Click="MoveRight_Click"/>
+        <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Get information about displays" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox Grid.Row="2" Grid.ColumnSpan="2" x:Name="Information" Text="Hello I am trying to publish the application for the 6th time. You need to have external display connected to make it work. If moving display won't work and you will reject application please click the button *Get information about dispays* and send me content of the box in the reject information. When you will confirm functionaltiy I will work on UI." TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+
 
     </Grid>
 </Window>

@@ -28,13 +28,14 @@ namespace ProductivityTools.MoveDisplay.UI
         private void MoveLeft_Click(object sender, RoutedEventArgs e)
         {
             ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
+            displays.LoadData();
             if (displays.Count > 1)
             {
                 displays.MoveExternalDisplayToLeft();
             }
             else
             {
-                MessageBox.Show("No external display detected. Nothing to move.");
+                ShowMessage();
             }
         }
 
@@ -42,13 +43,31 @@ namespace ProductivityTools.MoveDisplay.UI
         {
 
             ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
+            displays.LoadData();
             if (displays.Count > 1)
             {
                 displays.MoveExternalDisplayToRight();
             }
             else
             {
-                MessageBox.Show("No external display detected. Nothing to move.");
+                ShowMessage();
+            }
+        }
+
+        private void ShowMessage()
+        {
+            MessageBox.Show("Application is used to move external display to the left or right side of the screen. No external display detected. Nothing to move. If you want to use it please connect one external display to your pc/laptop and re-run application. I will work on the UI when application will start working correctly on all devices.");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Information.Text = string.Empty;
+            ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
+            displays.LoadData();
+            foreach (var display in displays)
+            {
+                var dump = ObjectDumper.Dump(display);
+                this.Information.Text += dump;
             }
         }
     }

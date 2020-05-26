@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ObjectDumper.NET" Version="2.5.20143.3-pre" />
     <PackageReference Include="ProductivityTools.UnmanagedDisplayWrapper" Version="1.0.2" />
   </ItemGroup>
 

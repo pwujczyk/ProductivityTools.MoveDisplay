@@ -9,7 +9,7 @@
   <Identity
     Name="12983ProductivityTools.MoveDisplay"
     Publisher="CN=B7077B4A-2360-4315-A97A-415E1DD60BD3"
-    Version="0.1.17.0" />
+    Version="0.1.24.0" />
 
   <Properties>
     <DisplayName>MoveDisplay</DisplayName>
