@@ -10,6 +10,7 @@
         <ResourceDictionary>
             <BitmapImage x:Key="StopImage" UriSource="Resources\arrowsGreen.png"/>
             <BitmapImage x:Key="PlayImage" UriSource="Resources\arrowsGrey.png"/>
+            <BitmapImage x:Key="move" UriSource="Resources\move.png"/>
         </ResourceDictionary>
     </Window.Resources>
     <!--<ThumbButtonInfoCollection>
@@ -48,6 +49,7 @@
     </Window.TaskbarItemInfo>
     <Grid Margin="0,0,0,5">
         <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -56,10 +58,19 @@
             <ColumnDefinition />
             <ColumnDefinition  />
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" x:Name="MoveLeft" Content="Move display to left" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="MoveLeft_Click" Margin="0,0,0,0"/>
-        <Button Grid.Row="0" Grid.Column="1" x:Name="MoveRight" Content="Move display to right" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top" Click="MoveRight_Click"/>
-        <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Get information about displays" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="Button_Click"/>
-        <TextBox Grid.Row="2" Grid.ColumnSpan="2" x:Name="Information" Text="Hello I am trying to publish the application for the 6th time. You need to have external display connected to make it work. If moving display won't work and you will reject application please click the button *Get information about dispays* and send me content of the box in the reject information. When you will confirm functionaltiy I will work on UI." TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button>
+            <StackPanel Orientation="Vertical">
+                <Image Source="{StaticResource ResourceKey=move}" 
+               Height="100" 
+               Width="134"/>
+                <Label HorizontalAlignment="Center"
+               Content="Move display to left" />
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="MoveLeft" Content="Move display to left" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="MoveLeft_Click" Margin="0,0,0,0"/>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="MoveRight" Content="Move display to right" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top" Click="MoveRight_Click"/>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Get information about displays" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox Grid.Row="3" Grid.ColumnSpan="2" x:Name="Information" Text="Hello I am trying to publish the application for the 6th time. You need to have external display connected to make it work. If moving display won't work and you will reject application please click the button *Get information about dispays* and send me content of the box in the reject information. When you will confirm functionaltiy I will work on UI." TextWrapping="Wrap" VerticalAlignment="Top"/>
 
 
 
