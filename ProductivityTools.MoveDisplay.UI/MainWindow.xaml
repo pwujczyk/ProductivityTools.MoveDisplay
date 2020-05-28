@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductivityTools.MoveDisplay.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="376">
+        Title="MainWindow" Height="300" Width="376" WindowStyle="ToolWindow">
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="StopImage" UriSource="Resources\arrowsGreen.png"/>
             <BitmapImage x:Key="PlayImage" UriSource="Resources\arrowsGrey.png"/>
             <BitmapImage x:Key="move" UriSource="Resources\move.png"/>
+            <BitmapImage x:Key="MoveLeft" UriSource="Resources\MoveLeft.png"/>
+            <BitmapImage x:Key="MoveRight" UriSource="Resources\MoveRight.png"/>
         </ResourceDictionary>
     </Window.Resources>
     <!--<ThumbButtonInfoCollection>
@@ -38,18 +40,18 @@
                     <ThumbButtonInfo
 
                     Description="Play"
-                    ImageSource="{StaticResource ResourceKey=PlayImage}"/>
+                    ImageSource="{StaticResource ResourceKey=MoveLeft}"/>
                     <ThumbButtonInfo
                   
                     Description="Stop"
-                    ImageSource="{StaticResource ResourceKey=StopImage}"/>
+                    ImageSource="{StaticResource ResourceKey=MoveRight}"/>
                 </ThumbButtonInfoCollection>
             </TaskbarItemInfo.ThumbButtonInfos>
         </TaskbarItemInfo>
     </Window.TaskbarItemInfo>
     <Grid Margin="0,0,0,5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="130"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -58,9 +60,18 @@
             <ColumnDefinition />
             <ColumnDefinition  />
         </Grid.ColumnDefinitions>
-        <Button>
+        <Button Grid.Column="0">
             <StackPanel Orientation="Vertical">
-                <Image Source="{StaticResource ResourceKey=move}" 
+                <Image Source="{StaticResource ResourceKey=MoveLeft}" 
+               Height="100" 
+               Width="134"/>
+                <Label HorizontalAlignment="Center"
+               Content="Move display to left" />
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+                <Image Source="{StaticResource ResourceKey=MoveRight}" 
                Height="100" 
                Width="134"/>
                 <Label HorizontalAlignment="Center"
