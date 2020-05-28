@@ -14,12 +14,23 @@
   <ItemGroup>
     <None Remove="Resources\arrowsGreen.png" />
     <None Remove="Resources\arrowsGrey.png" />
+    <None Remove="Resources\LeftArrows.png" />
     <None Remove="Resources\move.png" />
     <None Remove="Resources\MoveLeft.png" />
     <None Remove="Resources\MoveRight.png" />
+    <None Remove="Resources\RightArrows.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Page Remove="Resources\Labels.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Labels.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\LeftArrows.png" />
     <Resource Include="Resources\move.png" />
   </ItemGroup>
 
@@ -37,6 +48,7 @@
     <Resource Include="Resources\MoveRight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\RightArrows.png" />
   </ItemGroup>
 
 </Project>

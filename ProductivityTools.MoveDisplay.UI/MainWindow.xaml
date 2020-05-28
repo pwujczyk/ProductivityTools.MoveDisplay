@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductivityTools.MoveDisplay.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="376" WindowStyle="ToolWindow">
+        Title="MainWindow" Height="161" Width="376" WindowStyle="ToolWindow">
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="StopImage" UriSource="Resources\arrowsGreen.png"/>
@@ -13,6 +13,8 @@
             <BitmapImage x:Key="move" UriSource="Resources\move.png"/>
             <BitmapImage x:Key="MoveLeft" UriSource="Resources\MoveLeft.png"/>
             <BitmapImage x:Key="MoveRight" UriSource="Resources\MoveRight.png"/>
+            <BitmapImage x:Key="LeftArrows" UriSource="Resources\LeftArrows.png"/>
+            <BitmapImage x:Key="RightArrows" UriSource="Resources\RightArrows.png"/>
         </ResourceDictionary>
     </Window.Resources>
     <!--<ThumbButtonInfoCollection>
@@ -39,12 +41,12 @@
                 <ThumbButtonInfoCollection>
                     <ThumbButtonInfo
 
-                    Description="Play"
-                    ImageSource="{StaticResource ResourceKey=MoveLeft}"/>
+                    Description="{StaticResource ResourceKey=ButtonLeftInformation}"
+                    ImageSource="{StaticResource ResourceKey=LeftArrows}"/>
                     <ThumbButtonInfo
                   
-                    Description="Stop"
-                    ImageSource="{StaticResource ResourceKey=MoveRight}"/>
+                    Description="{StaticResource ResourceKey=ButtonRightInformation}"
+                    ImageSource="{StaticResource ResourceKey=RightArrows}"/>
                 </ThumbButtonInfoCollection>
             </TaskbarItemInfo.ThumbButtonInfos>
         </TaskbarItemInfo>
@@ -52,15 +54,12 @@
     <Grid Margin="0,0,0,5">
         <Grid.RowDefinitions>
             <RowDefinition Height="130"></RowDefinition>
-            <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition  />
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0">
+        <Button Grid.Column="0" Command="{Binding MoveToLeftCommand}" ToolTip="{StaticResource ResourceKey=ButtonLeftInformation}" >
             <StackPanel Orientation="Vertical">
                 <Image Source="{StaticResource ResourceKey=MoveLeft}" 
                Height="100" 
@@ -69,7 +68,7 @@
                Content="Move display to left" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="1">
+        <Button Grid.Column="1" Command="{Binding MoveToRightCommand}"  ToolTip="{StaticResource ResourceKey=ButtonRightInformation}" >
             <StackPanel Orientation="Vertical">
                 <Image Source="{StaticResource ResourceKey=MoveRight}" 
                Height="100" 
@@ -78,10 +77,6 @@
                Content="Move display to left" />
             </StackPanel>
         </Button>
-        <Button Grid.Row="1" Grid.Column="0" x:Name="MoveLeft" Content="Move display to left" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="MoveLeft_Click" Margin="0,0,0,0"/>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="MoveRight" Content="Move display to right" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top" Click="MoveRight_Click"/>
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Get information about displays" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="Button_Click"/>
-        <TextBox Grid.Row="3" Grid.ColumnSpan="2" x:Name="Information" Text="Hello I am trying to publish the application for the 6th time. You need to have external display connected to make it work. If moving display won't work and you will reject application please click the button *Get information about dispays* and send me content of the box in the reject information. When you will confirm functionaltiy I will work on UI." TextWrapping="Wrap" VerticalAlignment="Top"/>
 
 
 
