@@ -12,10 +12,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\arrowsGreen.png" />
-    <None Remove="Resources\arrowsGrey.png" />
+    <None Remove="Resources\Icon.png" />
+    <None Remove="Resources\Icon2.png" />
     <None Remove="Resources\LeftArrows.png" />
-    <None Remove="Resources\move.png" />
     <None Remove="Resources\MoveLeft.png" />
     <None Remove="Resources\MoveRight.png" />
     <None Remove="Resources\RightArrows.png" />
@@ -26,12 +25,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Labels.xaml">
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\LeftArrows.png" />
-    <Resource Include="Resources\move.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,8 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\arrowsGreen.png" />
-    <Resource Include="Resources\arrowsGrey.png" />
     <Resource Include="Resources\MoveLeft.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
