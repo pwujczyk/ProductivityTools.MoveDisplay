@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductivityTools.MoveDisplay.UI"
         mc:Ignorable="d"
-        Title="MoveDisplay" WindowStyle="ToolWindow" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Height="130">
+        Title="{StaticResource ResourceKey=MoveDisplay}" WindowStyle="ToolWindow" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Height="130">
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="StopImage" UriSource="Resources\arrowsGreen.png"/>

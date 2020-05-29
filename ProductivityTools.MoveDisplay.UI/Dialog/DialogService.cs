@@ -27,7 +27,8 @@ namespace ProductivityTools.MoveDisplay.UI.Dialog
 
         private void Showmessage(string s)
         {
-            MessageBox.Show(s);
+            string title = (string)Application.Current.FindResource("MoveDisplay");
+            MessageBox.Show(s, title, MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
