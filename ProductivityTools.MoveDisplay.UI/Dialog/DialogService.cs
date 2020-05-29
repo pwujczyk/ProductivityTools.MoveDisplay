@@ -7,9 +7,27 @@ namespace ProductivityTools.MoveDisplay.UI.Dialog
 {
     public class DialogService : IDialogService
     {
-        public void ShowOneDisplayMessage()
+        public void MoreThanTwoDisplaysMessage()
         {
-            MessageBox.Show("Application is used to move external display to the left or right side of the screen. No external display detected. Nothing to move. If you want to use it please connect one external display to your pc/laptop and re-run application. I will work on the UI when application will start working correctly on all devices.");
+            string message = (string)Application.Current.FindResource("MoreThanOneDisplay");
+            Showmessage(message);
+        }
+
+        public void NoDisplayDetected()
+        {
+            string message = (string)Application.Current.FindResource("NoDisplay");
+            Showmessage(message);
+        }
+
+        public void OneDisplayMessage()
+        {
+            string message = (string)Application.Current.FindResource("OnlyOneDisplay");
+            Showmessage(message);
+        }
+
+        private void Showmessage(string s)
+        {
+            MessageBox.Show(s);
         }
     }
 }

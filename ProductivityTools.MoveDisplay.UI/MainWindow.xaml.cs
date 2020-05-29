@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProductivityTools.MoveDisplay.UI.Dialog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace ProductivityTools.MoveDisplay.UI
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainWindowVM();
+            this.DataContext = new MainWindowVM(new DialogService());
         }
     }
 }

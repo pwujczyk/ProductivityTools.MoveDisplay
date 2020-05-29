@@ -4,4 +4,8 @@
                     xmlns:local="clr-namespace:ProductivityTools.MoveDisplay.UI.Resources">
     <system:String x:Key="ButtonLeftInformation">Move external display to the left side of your main screen</system:String>
     <system:String x:Key="ButtonRightInformation">Move external display to the right side of your main screen</system:String>
+    <system:String x:Key="OnlyOneDisplay">Application is used to move external display to the left or right side of the screen. No external display detected. Nothing to move. If you want to use it please connect one external display to your pc/laptop try again</system:String>
+    <system:String x:Key="MoreThanOneDisplay">Application is used to move external display to the left or right side of the screen. More than two displays detected and application works only with two. Disconnect one of them and try again.</system:String>
+    <system:String x:Key="NoDisplay">Application is used to move external display to the left or right side of the screen. No display was detected this means that something went wrong. Contact developer.</system:String>
+
 </ResourceDictionary>

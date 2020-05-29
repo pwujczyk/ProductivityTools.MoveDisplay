@@ -2,6 +2,8 @@
 {
     public interface IDialogService
     {
-        void ShowOneDisplayMessage();
+        void OneDisplayMessage();
+        void NoDisplayDetected();
+        void MoreThanTwoDisplaysMessage();
     }
 }

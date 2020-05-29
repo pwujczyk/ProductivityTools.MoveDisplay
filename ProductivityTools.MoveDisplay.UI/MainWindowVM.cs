@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ProductivityTools.MoveDisplay.UI.Dialog;
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 using System.Windows.Input;
 
@@ -9,39 +11,76 @@ namespace ProductivityTools.MoveDisplay.UI
     {
         public ICommand MoveToLeftCommand { get; }
         public ICommand MoveToRightCommand { get; }
+        private readonly IDialogService DialogService;
 
-        public MainWindowVM()
+        public MainWindowVM(IDialogService dialogService)
         {
             MoveToLeftCommand = new CommandHandler(MoveToLeft, () => true);
             MoveToRightCommand = new CommandHandler(MoveToRight, () => true);
+            this.DialogService = dialogService;
+        }
+
+        private void MoveDisplay(Direction direction)
+        {
+            ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
+            displays.LoadData();
+
+            Action move = () =>
+              {
+                  switch (direction)
+                  {
+                      case Direction.Left:
+                          displays.MoveExternalDisplayToLeft();
+                          break;
+                      case Direction.Right:
+                          displays.MoveMainDisplayToRight();
+                          break;
+                      default:
+                          throw new Exception("Direction is wrong");
+                  }
+              };
+
+
+            int displayAmount = displays.Count;
+            switch (displayAmount)
+            {
+                case 0: this.DialogService.NoDisplayDetected(); return;
+                case 1: this.DialogService.OneDisplayMessage(); return;
+                case 2: move(); return;
+                default:
+                    this.DialogService.MoreThanTwoDisplaysMessage(); return;
+                    break;
+            }
         }
 
         private void MoveToLeft()
         {
-            ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
-            displays.LoadData();
-            if (displays.Count > 1)
-            {
-                displays.MoveExternalDisplayToLeft();
-            }
-            else
-            {
-                ShowMessage();
-            }
+            MoveDisplay(Direction.Left);
+            //ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
+            //displays.LoadData();
+            //if (displays.Count > 1)
+            //{
+            //    displays.MoveExternalDisplayToLeft();
+            //}
+            //else
+            //{
+            //    this.DialogService.OneDisplayMessage();
+            //}
         }
 
         private void MoveToRight()
         {
-            ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
-            displays.LoadData();
-            if (displays.Count > 1)
-            {
-                displays.MoveExternalDisplayToRight();
-            }
-            else
-            {
-                ShowMessage();
-            }
+            MoveDisplay(Direction.Right);
+            //ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
+            //displays.LoadData();
+            //if (displays.Count > 1)
+            //{
+            //    displays.MoveExternalDisplayToRight();
+            //}
+            //else
+            //{
+            //    ShowMessage();
+            //}
         }
 
         private void ShowMessage()
