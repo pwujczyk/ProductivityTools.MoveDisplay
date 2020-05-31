@@ -33,7 +33,7 @@ namespace ProductivityTools.MoveDisplay.UI
                           displays.MoveExternalDisplayToLeft();
                           break;
                       case Direction.Right:
-                          displays.MoveMainDisplayToRight();
+                          displays.MoveExternalDisplayToRight();
                           break;
                       default:
                           throw new Exception("Direction is wrong");
@@ -49,43 +49,17 @@ namespace ProductivityTools.MoveDisplay.UI
                 case 2: move(); return;
                 default:
                     this.DialogService.MoreThanTwoDisplaysMessage(); return;
-                    break;
             }
         }
 
         private void MoveToLeft()
         {
             MoveDisplay(Direction.Left);
-            //ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
-            //displays.LoadData();
-            //if (displays.Count > 1)
-            //{
-            //    displays.MoveExternalDisplayToLeft();
-            //}
-            //else
-            //{
-            //    this.DialogService.OneDisplayMessage();
-            //}
         }
 
         private void MoveToRight()
         {
             MoveDisplay(Direction.Right);
-            //ProductivityTools.UnmanagedDisplayWrapper.Displays displays = new UnmanagedDisplayWrapper.Displays();
-            //displays.LoadData();
-            //if (displays.Count > 1)
-            //{
-            //    displays.MoveExternalDisplayToRight();
-            //}
-            //else
-            //{
-            //    ShowMessage();
-            //}
-        }
-
-        private void ShowMessage()
-        {
-            //MessageBox.Show("Application is used to move external display to the left or right side of the screen. No external display detected. Nothing to move. If you want to use it please connect one external display to your pc/laptop and re-run application. I will work on the UI when application will start working correctly on all devices.");
         }
     }
 }
