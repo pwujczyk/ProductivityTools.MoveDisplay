@@ -13,14 +13,13 @@
 
 # MoveDisplay
 
-Application allows to move external display to the left or right side of the screen.
+The application allows moving external display to the left or right side of the screen.
 
 <!--more-->
 
-Application was tested for laptop and one external display. 
-
-
-![](Images/AppScreenshot.png)
+The application was tested for laptop and one external display. 
+<!--og-image-->
+![PowerOptions](Images/AppScreenshot.png)
 
 You can use the main buttons, and also the small buttons in the application preview.
 
